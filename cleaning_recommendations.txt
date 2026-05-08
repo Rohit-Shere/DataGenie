@@ -1,0 +1,43 @@
+{
+    "missing_value_recommendations": [],
+    "duplicate_handling": {
+        "strategy": "none",
+        "reason": "No duplicate rows were detected in the dataset."
+    },
+    "categorical_encoding_recommendations": [
+        {
+            "column": "school_period",
+            "encoding_strategy": "one_hot_encoding",
+            "reason": "Nominal categorical variable with likely low cardinality, suitable for one-hot encoding."
+        },
+        {
+            "column": "ventilation_decision",
+            "encoding_strategy": "one_hot_encoding",
+            "reason": "Nominal categorical variable with likely low cardinality, suitable for one-hot encoding."
+        },
+        {
+            "column": "air_quality_label",
+            "encoding_strategy": "label_encoding",
+            "reason": "Target variable for a classification task, label encoding is appropriate for model consumption."
+        }
+    ],
+    "outlier_handling_recommendations": [
+        {
+            "column": "student_count_estimated",
+            "strategy": "iqr_capping",
+            "reason": "The column exhibits positive skewness (0.5), suggesting potential outliers that can be handled by IQR capping."
+        },
+        {
+            "column": "co2_ppm",
+            "strategy": "iqr_capping",
+            "reason": "The column exhibits positive skewness (0.62), suggesting potential outliers that can be handled by IQR capping."
+        },
+        {
+            "column": "pm25_ugm3",
+            "strategy": "iqr_capping",
+            "reason": "The column exhibits positive skewness (0.46), suggesting potential outliers that can be handled by IQR capping."
+        },
+        {
+            "column": "temperature_c",
+            "strategy": "none",
+            "reason": "The column has very low standard deviation (0.19) and a narrow range (20.2-21.0), indicating minimal variation where outlier
